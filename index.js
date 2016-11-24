@@ -1,3 +1,4 @@
+var path = require('path');
 var express = require('express');
 var app = express();
 
@@ -15,6 +16,16 @@ app.listen(app.get('port'), function() {
 });
 
 app.get('/', function(req, res) {
+  var fileName = path.join(__dirname, 'index.html');
+  res.sendFile(fileName, function (err) {
+    if (err) {
+      console.log(err);
+      res.status(err.status).end();
+    }
+    else {
+      console.log('Sent:', fileName);
+    }
+  });
 });
 
 app.get('/api/whoami/', function (req, res) {
@@ -23,14 +34,13 @@ app.get('/api/whoami/', function (req, res) {
   var i=agent.indexOf('(');
   var j=agent.indexOf(')',i);
   console.warn(i+' '+j);
-  var timestamp={
+  var info={
     ipaddress:req.ip.substr(7),
     language:req.headers['accept-language'].split(',')[0],
     software:agent.substr(i+1,j-i-1)
   }
-  // console.warn(req);
   
-  res.send(JSON.stringify(timestamp)+"\n");
+  res.send(info);
 })
 
 

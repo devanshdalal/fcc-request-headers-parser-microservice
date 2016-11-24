@@ -1,37 +1,12 @@
-# FreeCodeCamp - Timestamp Microservice
-This repository contains a small full-stack Javascript web application.
+# RequestHeaderParser
 
-This was done in order to complete the [timestamp microservice
-challenge](http://www.freecodecamp.com/challenges/timestamp-microservice) from
-[FreeCodeCamp](http://www.freecodecamp.com).
+This repository is for the Free Code Camp Back End API [Request Header Parser Microservice](https://www.freecodecamp.com/challenges/request-header-parser-microservice) project. 
 
-This repository will return a JSON representation of the unix timestamp and
-natural date, given a proper query string to the `/` endpoint.
+It expose one endpoint `/api/whoami` to retrieve information from the HTTP headers sent.
 
-## Live Version
-This application can be found [live on
-Heroku](https://fcc-timestamps-ms.herokuapp.com/).
+The endpoint returns the following information:
+* Your IP Address
+* Your locale
+* The software you are using
 
-## Installation and Startup
-To run this application locally, first install the dependencies by running `npm
-install` in the root directory of the application.
-
-Then, start the server by running `nodejs index.js`. **Note:** Replace `nodejs`
-with `node` if your system's executable is called `node`.
-
-## Usage
-The application will parse the query string passed into the `/` endpoint, and
-return JSON with a `unix` property and a `natural` property. These properties
-represent the unix timestamp and a human-readable date, respectively.
-
-### Example Input
-```
-https://fcc-timestamps-ms.herokuapp.com//December%2015,%202015
-https://fcc-timestamps-ms.herokuapp.com//1450137600
-```
-
-### Example Output
-```
-{ "unix": 1450137600, "natural": "December 15, 2015" }
-```
-
+You can find the application hosted on Heroku [here](https://fcc-request-headers-parser-ms.herokuapp.com/api/whoami/).

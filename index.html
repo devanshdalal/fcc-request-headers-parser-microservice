@@ -1,0 +1,40 @@
+<html>
+<head>
+    
+	<script type="text/javascript">
+	    $.get("https://fcc-request-headers-parser-ms.herokuapp.com/api/whoami/", function(data, status){
+	    	var raw = JSON.stringify(data, null, '\t');
+            $("#raw-data").html(raw);
+        });
+	</script> 
+
+	<title>Request Header Parser Microservice</title>   
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1>Request Header Parser Microservice</h1>
+			<p>This website if for the Free Code Camp Back End API <a href="https://www.freecodecamp.com/challenges/request-header-parser-microservice">Request Header Parser Microservice project</a>. It exposes a single enpoint at <a href="https://fcc-request-headers-parser-ms.herokuapp.com/api/whoami/api/whoami"><code>/api/whoami</code></a> which returns infomation about your IP address, locale, and the software you are using in a JSON format.</p>
+		</div>
+
+		<h2>Your Infomation</h2>
+
+		<div id="response">
+		    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+		        <li class="active"><a href="#raw" data-toggle="tab">raw</a></li>
+		    </ul>
+		    <div id="response-tab-content" class="tab-content">
+		        <div class="tab-pane active" id="raw">
+		            <pre id="raw-data"></pre>
+		        </div>
+		    </div>
+		</div>
+
+		<h2>Usage</h2>
+		<p>The endpoint can be found at: <a href="https://fcc-request-headers-parser-ms.herokuapp.com/api/whoami/api/whoami"><code>https://fcc-request-headers-parser-ms.herokuapp.com/api/whoami/api/whoami</code></a>.</p>
+
+		<h2>Source Code</h2>
+		<p>The source code can be found on my <a href="https://github.com/devanshdalal/fcc-request-headers-parser-microservice">github</a>.</p>
+    </div>
+</body>
+</html>
